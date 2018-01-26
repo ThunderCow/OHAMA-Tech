@@ -1,4 +1,4 @@
 # OHAMA-Tech
 IS-105
 
-Testing jetsbrain with git
+Testing jetsbrain with git :)
