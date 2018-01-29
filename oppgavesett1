@@ -1,0 +1,18 @@
+Oppgave 3:
+
+1.Go lang importerer fra liberary ved egen metode
+Go lang: import( “fmt” )
+
+EKS:java : import  java.util.Random
+
+2.Go lang har package main, men java har java import fra java class library.
+3.Go programming language slutter ikke linjer av kode  med semicolon.
+
+func main () {
+ fmt.Println (“Mohamed”) 
+}	
+public  Responder (){
+			randomGenerator = new Random();
+			responses = new ArrayList<>();
+			fillResponses();
+}
