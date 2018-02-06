@@ -34,7 +34,7 @@
 
 <b>A)</b>
 For å gjøre om de binære tallene om til heksadesimaler, kan man følge tabellene for de to tallsystemene. Begge systemene har 16 siffer og man kan enkelt finne ut hvilke verdier som er like dersom man har tabellene satt opp ved siden av hverandre. For eksempel:
-Si at det binære tallet er 0010 1010 1111, da kan vi se i tabellen at 0010=2, 1010=A og 1111=F. 0010 1010 1111=0x2AF. Det samme prinsippet gjelder dersom det skal konverteres fra heksadesimal til binære tall, bare motsatt.
+Si at det binære tallet er 0010 1010 1111&#8322;, da kan vi se i tabellen at 0010=2, 1010=A og 1111=F. 0010 1010 1111=0x2AF. Det samme prinsippet gjelder dersom det skal konverteres fra heksadesimal til binære tall, bare motsatt.
 <br>
 <table style="width:100%">
   <tr>
