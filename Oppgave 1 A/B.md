@@ -80,7 +80,7 @@ For å konvertere binære tall om til desimaler setter vi opp det binære tallet
     <td>2048</td>
     <td>1024</td>
     <td>512</td>
-    <td><256/td>
+    <td>256</td>
     <td>128</td>
     <td>64</td>
     <td>32</td>
@@ -91,3 +91,8 @@ For å konvertere binære tall om til desimaler setter vi opp det binære tallet
     <td>1</td>
    </tr>
 </table>
+
+<br>
+Etter vi har satt tallene i en tabell, skal vi addere tallene som befinner seg under tallet 1. 
+512+128+32+8+4+2+1=687. det binære tallet 0010 1010 1111 er da 687 i desimalform. For å gjøre om desimal til et binært tall tar vi 687^10=0000 0010 1010 1111^2.
+<br>
