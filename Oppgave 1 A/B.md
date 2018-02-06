@@ -31,10 +31,11 @@
   </tr>
 </table>
 <br>
-<br>
+
 <b>A)</b>
 For å gjøre om de binære tallene om til heksadesimaler, kan man følge tabellene for de to tallsystemene. Begge systemene har 16 siffer og man kan enkelt finne ut hvilke verdier som er like dersom man har tabellene satt opp ved siden av hverandre. For eksempel:
 Si at det binære tallet er 0010 1010 1111, da kan vi se i tabellen at 0010=2, 1010=A og 1111=F. 0010 1010 1111=0x2AF. Det samme prinsippet gjelder dersom det skal konverteres fra heksadesimal til binære tall, bare motsatt.
+<br>
 <table style="width:100%">
   <tr>
     <th>Binære</th>
@@ -59,6 +60,34 @@ Si at det binære tallet er 0010 1010 1111, da kan vi se i tabellen at 0010=2, 1
 </table>
 
 For å konvertere binære tall om til desimaler setter vi opp det binære tallet i en tabell. Si at det binære tallet er som i eksempelet over, 0010 1010 1111.
-0	0	1	0	1	0	1	0	1	1	1	1
-2048	1024	512	256	128	64	32	16	8	4	2	1
-
+<br>
+<table style="width:100%">
+  <tr>
+    <th>0</th>
+    <th>0</th>
+    <th>1</th>
+    <th>0</th>
+    <th>1</th>
+    <th>0</th>
+    <th>1</th>
+    <th>0</th>
+    <th>1</th>
+    <th>1</th>
+    <th>1</th>
+    <th>1</th>
+  </tr>
+  <tr>
+    <td>2048</td>
+    <td>1024</td>
+    <td>512</td>
+    <td><256/td>
+    <td>128</td>
+    <td>64</td>
+    <td>32</td>
+    <td>16</td>
+    <td>8</td>
+    <td>4</td>
+    <td>2</td>
+    <td>1</td>
+   </tr>
+</table>
