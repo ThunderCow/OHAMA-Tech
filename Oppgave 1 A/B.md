@@ -107,7 +107,6 @@ For å konvertere binære tall om til desimaler setter vi opp det binære tallet
 Etter vi har satt tallene i en tabell, skal vi addere tallene som befinner seg under tallet 1. 
 512+128+32+8+4+2+1=687&#8321;&#8320;. det binære tallet 0010 1010 1111&#8322; er da 687&#8321;&#8320; i desimalform. For å gjøre om desimal til et binært tall tar vi 687&#8321;&#8320;=0000 0010 1010 1111&#8322;.
 <br>
-<br>
 <table style="width:100%">
   <tr>
     <th>Binære</th>
@@ -143,22 +142,22 @@ B) Når vi går fra heksadesimaler til desimaler bruker vi tabellene fra hvert t
   <tr>
     <td>0</td>
     <td>A</td> 
-    <td>10*16º=10</td>
+    <td>10*16<sup>0</sup>=10</td>
   </tr>
   <tr>
     <td>1</td>
     <td>B</td> 
-    <td>11*16<sup>0</sup>=176</td>
+    <td>11*16<sup>1</sup>=176</td>
   </tr>
   <tr>
     <td>2</td>	 	
     <td>F</td>
-    <td>15*16^2=3840</td>
+    <td>15*16<sup>2</sup>=3840</td>
   </tr>
   <tr>
     <td>3</td>
     <td>4</td>
-    <td>4*16^3=16384</td>
+    <td>4*16<sup>3</sup>=16384</td>
   </tr>
  </table>
 <br>
