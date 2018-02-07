@@ -113,7 +113,7 @@ Etter vi har satt tallene i en tabell, skal vi addere tallene som befinner seg u
     <th>Binære</th>
     <th>Heksadesimal</th>
   </tr>
-  <tr>
+  <tr>    
     <td>0000</td>
     <td>2</td>
 
@@ -143,12 +143,12 @@ B) Når vi går fra heksadesimaler til desimaler bruker vi tabellene fra hvert t
   <tr>
     <td>0</td>
     <td>A</td> 
-    <td>10*16^0=10</td>
+    <td>10*16º=10</td>
   </tr>
   <tr>
     <td>1</td>
     <td>B</td> 
-    <td>11*16^1=176</td>
+    <td>11*16<sup>0</sup>=176</td>
   </tr>
   <tr>
     <td>2</td>	 	
