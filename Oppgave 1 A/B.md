@@ -203,4 +203,4 @@ Dersom vi skal konvertere fra desimaltall til heksadesimal setter vi tallene i e
 27:16=1, 1x16=16, 27-16=11
 1:16=0, 0x16=0, 1-0=1
 0
-Det heksadesimale tallet blir da 1b3<sap>16</sap>.
+Det heksadesimale tallet blir da 1b3<sub>16</sub>.
