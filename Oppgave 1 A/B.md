@@ -132,7 +132,7 @@ Etter vi har satt tallene i en tabell, skal vi addere tallene som befinner seg u
 </table>
 <br>
 
-B) Når vi går fra heksadesimaler til desimaler bruker vi tabellene fra hvert tallsystem til å finne verdien sifrene har når vi skal konvertere de. Vi setter opp en tabell for å vise utregningen. Vi bruker 4FBA som et eksempel.
+<b>B)</b> Når vi går fra heksadesimaler til desimaler bruker vi tabellene fra hvert tallsystem til å finne verdien sifrene har når vi skal konvertere de. Vi setter opp en tabell for å vise utregningen. Vi bruker 4FBA som et eksempel.
 <table style="width:100%">
   <tr>
     <th>Posisjon</th>
@@ -198,3 +198,9 @@ Dersom vi skal konvertere fra desimaltall til heksadesimal setter vi tallene i e
   </tr>
  </table>
 <br>
+
+435:16=27, 27x16=432, 435-432=3
+27:16=1, 1x16=16, 27-16=11
+1:16=0, 0x16=0, 1-0=1
+0
+Det heksadesimale tallet blir da 1b3<sap>16</sap>.
