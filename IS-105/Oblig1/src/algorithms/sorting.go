@@ -1,4 +1,4 @@
-package
+package algorithms
 
 // Les https://en.wikipedia.org/wiki/Bubble_sort
 func Bubble_sort_modified(list []int) {
