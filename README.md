@@ -6,10 +6,10 @@ IS-105
     <th><b>Group members:</b></th>
   </tr>
   <tr>
-    <td>Abdulhalim Alhassan</td>
+    <td>Ole Morten Ness</td>
 </tr>
   <tr>
-    <td>Adrian Bjørk</td>
+    <td>Abdulhalim "Halim" Alhassan</td>
 </tr>
   <tr>
     <td>Mahamed Salad</td>
@@ -18,5 +18,5 @@ IS-105
     <td>Muhammad Ali Amin</td>
 </tr>
   <tr>
-    <td>Ole Morten Ness</td>
+    <td>Adrian Bjørk</td>
 </table>
