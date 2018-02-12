@@ -1,12 +1,32 @@
-package algorithms
+package main
 
-// Les https://en.wikipedia.org/wiki/Bubble_sort
-func Bubble_sort_modified(list []int) {
+//importere filen her
+import (
+	"fmt"
+)
 
-	// Skriv din kode her
 
-
+// Implementering av Bubble_sort modified algoritmen
+func Bubble_sort_modified(a []int) {
+	var (
+		n = len(a)
+		sorted = false
+	)
+	for !sorted {
+		swapped := false
+		for i := 0; i < n-1; i++ {
+			if a[i] > a[i+1] {
+				a[i+1], a[i] = a[i], a[i+1]
+				swapped = true
+			}
+		}
+		if !swapped {
+			sorted = true
+		}
+		n = n - 1
+	}
 }
+
 
 // Implementering av Bubble_sort algoritmen
 func BubbleSort(list []int) {
@@ -47,4 +67,24 @@ func qsort(values []int, l int, r int) {
 
 	qsort(values, l, i-2)
 	qsort(values, i, r)
+}
+
+
+// Her er Main funksjonen til å printe array lister
+func main() {
+	list := [] int {1,3,2,4,8,6,7,2,3,0} // Arrays will fall for Bubble Sort Function
+	fmt.Println("Unsorted array: " , list)
+	BubbleSort(list)
+	fmt.Println("Sorted array: ", list, "\n",)
+
+	values := [] int {1,4,2,3,7,6,8,5,0} // This Array list will affiliate with Quick Sort function
+	fmt.Println("Values before Quick sorting: ", values)
+	QuickSort(values)
+	fmt.Println("Values after Quick sorting: ", values, "\n",)
+
+	a := []int{5, 1, 6, 2, 4, 8, 3, 7, 9} //Arrays named 'a' affiliate with QuickSort modified function
+	fmt.Println("QuickSort_Modified Array Before Sorting : ", a)
+	Bubble_sort_modified(a)
+	fmt.Println("Sorted Array : ", a, "\n",)
+
 }
