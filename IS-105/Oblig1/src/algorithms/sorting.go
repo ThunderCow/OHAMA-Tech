@@ -82,8 +82,8 @@ func main() {
 	QuickSort(values)
 	fmt.Println("Values after Quick sorting: ", values, "\n",)
 
-	a := []int{5, 1, 6, 2, 4, 8, 3, 7, 9} //Arrays named 'a' affiliate with QuickSort modified function
-	fmt.Println("QuickSort_Modified Array Before Sorting : ", a)
+	a := []int{5, 1, 6, 2, 4, 8, 3, 7, 9} //Arrays named 'a' affiliate with Bubble Sort modified function
+	fmt.Println("Bubble_sort_modified Array Before Sorting : ", a)
 	Bubble_sort_modified(a)
 	fmt.Println("Sorted Array : ", a, "\n",)
 
