@@ -3,6 +3,18 @@ package main
 import "fmt"
 
 
+func main() {
+
+	fmt.Println("Calling the function to show the three different forms")
+	iterateOverExtendedASCIIStringLiteral()
+	cp := "\x22\x20\x80\x20\xf7\x20\xbe\x20\x64\x6f\x6c\x6c\x61\x72\x20\x22"
+	str := ExtendedASCIIText(cp)
+	fmt.Printf("%s", str,)
+
+
+}
+
+//Function for iteration of ASCII Codes and print out in three different forms.
 func iterateOverExtendedASCIIStringLiteral(){
 
 	for i := 128 ; i <= 255 ; i++ {
@@ -18,18 +30,8 @@ func iterateOverExtendedASCIIStringLiteral(){
 	}
 }
 
-func main() {
 
-	fmt.Println("Calling the function to show the three different forms")
-	iterateOverExtendedASCIIStringLiteral()
-	cp := "\x22\x20\x80\x20\xf7\x20\xbe\x20\x64\x6f\x6c\x6c\x61\x72\x20\x22"
-	str := ExtendedASCIIText(cp)
-	fmt.Printf("%s", str,)
-
-
-}
-
-// Kode for Oppgave 4b
+// Code to solve the Oppgave 4b
 
 func ExtendedASCIIText(cp string) string {
 	r := make([]rune, len(cp))
@@ -39,6 +41,7 @@ func ExtendedASCIIText(cp string) string {
 	return string(r)
 }
 
+// Function to check the values and set the condition.
 func init() {
 	for i, r := range ascii {
 		if r == 0 {
@@ -47,7 +50,7 @@ func init() {
 	}
 }
 
-// cp1252 to Unicode table
+// cp1252 to Unicode table, this table shows the representation of unicode alongwith other formats.
 // ftp://ftp.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP1252.TXT
 var ascii = [256]rune{
 	0x80: '\u20AC', // EURO SIGN
