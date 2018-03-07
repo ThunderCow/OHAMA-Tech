@@ -1,134 +1,128 @@
-
 package main
 
 import (
 	"fmt"
 	"log"
 	"os"
-
 )
 
 var (
 	fileInfo os.FileInfo
-	fileMode os.FileMode
 	err      error
 )
 
-type FileMode uint32
+//Checks if the file is append or not
+func checkFileIsAppend()  {
+	filen := os.Args[1]
+	_, err := os.Open(filen)
+	switch  os.ModeAppend {
+	case os.ModeAppend:
+	if err == nil {
+		fmt.Println("File is appended")
+	} else {
+		fmt.Println("File is not appended")
+	}
+	}
+}
 
+//Checks if the file is a device file or not
+func checkFileDevice()  {
+	filen := os.Args[1]
+	_, err := os.Open(filen)
+	switch  os.ModeDevice {
+	case os.ModeDevice:
+		if err == nil {
+			fmt.Println("Is a device file")
+		} else {
+			fmt.Println("Is not a device file")
+		}
+	}
+}
 
+//Checks if the file is regular or not
 func fileIsRegular (){
-
-	if _, err := os.Stat("test.txt"); os.IsNotExist(err) {
+	filen := os.Args[1]
+	if _, err := os.Stat(filen); os.IsNotExist(err) {
 		// check does not exist
-    
 		fmt.Println("The file does not exist")
 	}
-
-
 	if _, err := os.Stat("test.txt"); err == nil {
 		// check file does exist
-    
 		fmt.Println("This is Regular file")
 	}
 
 }
 
-func ReadLink(){
+//Checks if the file is an symbolic link or not
+func SymLink(){
+	filen := os.Args[1]
+	if _, err := os.Lstat(filen); err == nil {
 
-
-	if _, err := os.Lstat("test.txt"); err == nil {
-    
-    
 		fmt.Println("The is a symbolic link")
-    
+
 	} else {
-    
+
 		fmt.Println("This is not a symbolic link")
-		}
+	}
 
 }
 
-
+//Converts the file size into other units from bytes
 func sizeInBKM(){
+	filen := os.Args[1]
+	file, err := os.Open(filen)
 
-
-file, err := os.Open("test.text")
-
-if err != nil{
-	return
+	if err != nil{
+		log.Fatal(err)
 	}
 
 	defer file.Close()
 
-
 	stat, err := file.Stat()
 
 	if err != nil{
-		return
+		log.Fatal(err)
 	}
+	//bytes conversion into others with converting int to float64
+	bytes := stat.Size()
+	var b = float64(bytes)
 
+	var kilobytes float64
+	kilobytes = b / 1024
 
+	var megabytes float64
+	megabytes = kilobytes / 1024
 
-	var bytes = stat.Size()
+	var gigabytes float64
+	gigabytes = megabytes /1024
 
-	var kilobytes  = ((bytes)/1024)
-
-	var megabytes = (float64)(kilobytes/1024)
-
-
-
-	fmt.Printf("Size in bytes:", bytes)
-	fmt.Printf("\n")
-	fmt.Printf("Size in kilobytes:", kilobytes)
-	fmt.Printf("\n")
-	fmt.Printf("Size in megabytes:", megabytes)
-	fmt.Printf("\n")
+	//print out the following conversions
+	fmt.Println("File size in bytes ", bytes, "bytes")
+	fmt.Println("File size in kilobytes ", kilobytes, "KB")
+	fmt.Println("File size in megabytes ", megabytes, "MB")
+	fmt.Println("File size in gigabytes", gigabytes, "GB")
 
 }
 
-
+//main function
 func main() {
 
+	//filen gets the fil wanted to check as a argument in terminal
+	filen := os.Args[1]
 
-	fileInfo, err = os.Stat("test.txt")
+	//file_info function to open and read file
+	fileInfo, err = os.Stat(filen)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-
-	file, err := os.Open("test.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-  
-  //close file
-	file.Close()
-	
-  // OpenFile with more options. Last param is the permission mode
-	// Second param is the attributes when opening
-
-	file, err = os.OpenFile("test.txt", os.O_APPEND, 0666)
-	if err != nil {
-		log.Fatal(err)
-	}
-	file.Close()
-
-
-	//skriver ut info
+	//print out info and calling methods
 	fmt.Println("Information about:", fileInfo.Name())
+	sizeInBKM()
 	fmt.Println("Is Directory: ", fileInfo.IsDir())
-	fmt.Println("Permissions:", fileInfo.Mode())
-	fmt.Println( "Is not append only",)
-
-
-	//methodcall
 	fileIsRegular()
-	ReadLink()
-  sizeInBKM()
+	fmt.Println("Permissions:", fileInfo.Mode())
+	checkFileIsAppend()
+	checkFileDevice()
+	SymLink()
 }
-
-
-
-
-
