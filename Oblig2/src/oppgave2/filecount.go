@@ -1,4 +1,5 @@
-
+/* The code lines 114-119 & 131-136 are not completed yet(*to take out most common runes from a file & look values
+from highest to lowest )but major part has been done.*/
 package main
 
 import (
