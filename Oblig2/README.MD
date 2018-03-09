@@ -56,6 +56,7 @@ Oppgave 2
     Rune: X , Counts: X
 
 Oppgave 3
+   
     Dette er et program som skal ta input i to tall, summere tallene og skrive resultat i en fil. Den første del av programet skal bruke 
     channels, den andre del skal to go fil kommunisere med hverandre for å skrive summen av to tall.
     
