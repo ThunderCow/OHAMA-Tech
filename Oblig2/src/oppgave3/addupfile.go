@@ -1,13 +1,9 @@
-
 package main
 
 import (
 	"fmt"
 	"os"
-	"os/signal"
-	"syscall"
 )
-
 //to handle an error
 func check (e error){
 	if e != nil{
@@ -15,41 +11,40 @@ func check (e error){
 	}
 }
 
-// var. declaration
-var a string
-var b string
-
 //Main function
 func main() {
-	
 
-	//implementering av håndtering av SIGINT
-	c := make(chan os.Signal, 0x2)
-	signal.Notify(c, syscall.SIGINT)
-
-	go func(){
-		<- c
-		fmt.Printf("program motatt SIGINT")
-		os.Exit(0)
-	}()
-
+	filename := os.Args[1]
 	//readValue from terminal
-	fmt.Scanln(&a)
-	fmt.Scanln(&b)
-	fmt.Println("Reading number", a, b, "\n")	//output the reading
 
 	//open a file to read it and check for error too
-	f, err := os.Create("test1.txt")
+
+	a := os.Args[2]
+	b := os.Args[3]
+
+	f, err := os.OpenFile(filename, os.O_WRONLY, 0777)
+	if err != nil {
+		panic(err)
+	}
 	check(err)
 	defer f.Close()
 
-	//bytes conversion & write on a file
-	bs := []byte(a + "\n" + b)
-	n1, err := f.Write(bs)
-	check(err)
-	fmt.Printf("wrote %d bytes \n", n1)
+	sb := []byte(a + "\n" + b)
+	strValue, err := f.Write(sb)
+	fmt.Println("Written values on a file", strValue)
+	resultCall(filename)
+}
 
-	//syncing to ensure all is done
-	f.Sync()
+func resultCall(filename string){
+		filename = os.Args[4]
+		file, err := os.Open(filename)
+		if err != nil {
+			panic(err)
+		}
+		check(err)
+		defer file.Close()
+		return
 
+		// No arguments were specified!
+	}
 }
