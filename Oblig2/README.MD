@@ -40,7 +40,7 @@ Oppgave 1
 Oppgave 2
 
     Dette er ett som skal lese infomasjon fra en .txt fil. Filen gis som ett argument 
-    i terminal. Det
+    i terminal.
     Resultatet skal være i følgende format:
 
     Information about <filnavn>:
