@@ -32,19 +32,5 @@ func main() {
 	sb := []byte(a + "\n" + b)
 	strValue, err := f.Write(sb)
 	fmt.Println("Written values on a file", strValue)
-	resultCall(filename)
-}
 
-func resultCall(filename string){
-		filename = os.Args[4]
-		file, err := os.Open(filename)
-		if err != nil {
-			panic(err)
-		}
-		check(err)
-		defer file.Close()
-		return
-
-		// No arguments were specified!
-	}
 }
