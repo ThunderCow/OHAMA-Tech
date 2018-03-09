@@ -39,7 +39,7 @@ Oppgave 1
   
 Oppgave 2
 
-    Dette er ett som skal lese infomasjon fra en .txt fil. Filen gis som ett argument 
+    Dette er ett program som skal lese infomasjon fra en .txt fil. Filen gis som ett argument 
     i terminal.
     Resultatet skal være i følgende format:
 
@@ -56,4 +56,7 @@ Oppgave 2
     Rune: X , Counts: X
 
 Oppgave 3
-
+    Dette er et program som skal ta input i to tall, summere tallene og skrive resultat i en fil. Den første del av programet skal bruke 
+    channels, den andre del skal to go fil kommunisere med hverandre for å skrive summen av to tall.
+    
+    programmet skal stoppes ved bruk av SIGINT, før de fullfører.
