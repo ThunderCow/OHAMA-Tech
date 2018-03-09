@@ -38,11 +38,24 @@ func main() {
 	//calling go functions
 	go getUserInput(input1, input2, chn1, chn2, chn3)
 	go addValue(input1, input2, chn2)
+	go oppTreSIGINT()
 
 
 	//print out the values on the terminal
 	fmt.Println("Reading first input: ", <-chn1)
 	fmt.Println("Reading second input: ", <-chn1)
 	fmt.Println("Giving resulted value: ", <-chn3)
+}
+
+func oppTreSIGINT()  {
+	//implementering av håndtering av SIGINT
+	c := make(chan os.Signal, 0x2)
+	signal.Notify(c, syscall.SIGINT)
+
+	go func(){
+		<- c
+		fmt.Printf("program motatt SIGINT")
+		os.Exit(0)
+	}()
 
 }
