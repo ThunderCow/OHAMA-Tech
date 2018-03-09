@@ -18,6 +18,10 @@ func linjeteller(filename string) (int64, error) {
 		return 0, err
 	}
 	defer f.Close()
+
+	// NewScanner returns a new scanner to read from f (file givens as argument)
+	// The NewScanner does a split function with defaults to ScanLines.
+	// The for loop counts given total line the the file.
 	s := bufio.NewScanner(f)
 	for s.Scan() {
 		lc++
@@ -25,18 +29,6 @@ func linjeteller(filename string) (int64, error) {
 	return lc, s.Err()
 }
 
-/*func bokstavteller() {
-	filen := os.Args[1]
-	b, err := ioutil.ReadFile(filen)
-	if err != nil {
-		fmt.Print(err)
-	}
-
-	asciiStr := b
-	asciiBytes := []byte(asciiStr)
-
-	fmt.Printf("test string=%v, bytes=%v\n", asciiStr, asciiBytes)
-}*/
 
 func char_count(chars []string) map[string]int {
 	// iterate over the slice of charcters and populate
@@ -59,6 +51,7 @@ func char_count(chars []string) map[string]int {
 	return char_freq
 }
 
+// define what data type we will use
 type char_struct struct {
 	freq int
 	char string
@@ -71,12 +64,6 @@ func (a by_freq) Len() int           { return len(a) }
 func (a by_freq) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a by_freq) Less(i, j int) bool { return a[i].freq > a[j].freq }
 
-// by_char implements sort.Interface for []char_struct based on the word field
-type by_char []char_struct
-
-func (a by_char) Len() int           { return len(a) }
-func (a by_char) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
-func (a by_char) Less(i, j int) bool { return a[i].char > a[j].char }
 
 func main() {
 	filen := os.Args[1]
@@ -87,7 +74,7 @@ func main() {
 	}
 
 	fmt.Println("Information about", filen+":\n",)
-	fmt.Println("Number of lines in file:", lc)
+	fmt.Println("Number of lines in file:", lc, "\n")
 
 	text := string(read)
 
@@ -113,10 +100,10 @@ func main() {
 		ix++
 	}
 	fmt.Println("Most common runes:\n")
+
 	// sorting slice of structers by field freq in place
 	sort.Sort(by_freq(struct_slice))
-
 	for i, ix := 1, 0; i < 6; i, ix = i+1, ix+1 {
-		fmt.Println(i, "Rune:", struct_slice[ix].char, " Count:", struct_slice[ix].freq)
+		fmt.Println(i,".", "Rune:", struct_slice[ix].char, ", Count:", struct_slice[ix].freq)
 	}
 }
