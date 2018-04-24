@@ -12,10 +12,10 @@ IS-105
     <td>Abdulhalim "Halim" Alhassan</td>
 </tr>
   <tr>
-    <td>Mahamed Salad</td>
+    <td>Muhammad Ali Amin</td>
 </tr>
   <tr>
-    <td>Muhammad Ali Amin</td>
+    <td>Mahamed Salad</td>
 </tr>
   <tr>
     <td>Adrian Bjørk</td>
