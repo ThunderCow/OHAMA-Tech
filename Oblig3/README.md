@@ -20,3 +20,21 @@ IS-105
   <tr>
     <td>Adrian Bjørk</td>
 </table>
+
+Læringsutbytte:
+
+-Forståelse for hvordan webservere og klienter fungerer og kommuniserer med hverandre
+-Forståelse for det svært aktuelle JSON formatet
+-Anvendelse av webapplikasjoner i GoLang
+-Bli kjent med internettstandarder
+
+
+Oppgave 1
+kommentar...
+
+Oppgave 2
+kommentar...
+
+Oppgave 3
+kommentar...
+
