@@ -85,7 +85,7 @@ func handleRequest(conn net.Conn)  {
 		// sample process for string received
 		//newmessage := strings.ToUpper(message)
 		// send new string back to client
-		conn.Write([]byte("hei på degasda asda d dasa s ;)" + "\n"))
+		conn.Write([]byte("hei på deg." + "\n"))
 	}
 	conn.Close()
 }
