@@ -24,12 +24,32 @@ type Crypto []struct {
 	LastUpdated      string `json:"last_updated"`
 }
 
+var catch Crypto
+
 func main() {
+	//http.HandleFunc("/",template1)
+	http.HandleFunc("/1", func(w http.ResponseWriter, r *http.Request) {
+		Info1()
+	})
+	http.HandleFunc("/2", func(w http.ResponseWriter, r *http.Request) {
+		Info2()
+	})
+	http.HandleFunc("/3", func(w http.ResponseWriter, r *http.Request) {
+		Info3()
+	})
+	http.HandleFunc("/4", func(w http.ResponseWriter, r *http.Request) {
+		Info4()
+	})
+	http.HandleFunc("/5", func(w http.ResponseWriter, r *http.Request) {
+		Info5()
+	})
+	http.ListenAndServe(":8080", nil)
+	/*
 	Info1()
 	Info2()
 	Info3()
 	Info4()
-	Info5()
+	Info5()*/
 }
 
 func Info1() {
@@ -49,21 +69,23 @@ func Info1() {
 	/*switch info2 {
 	case "price":*/
 	fmt.Printf("The price of %v today is %v usd \n", crypto[0].Name, crypto[0].PriceUsd)
+	fmt.Printf("The Symbol of  %v is %v  \n", crypto[0].Name, crypto[0].Symbol)
 }
 
 func Info2() {
-		url := "http://api.coinmarketcap.com/v1/ticker/dogecoin"
-		resp, err := http.Get(url)
-		if err != nil {
-			panic(err.Error())
-		}
-		defer resp.Body.Close()
+	url := "http://api.coinmarketcap.com/v1/ticker/dogecoin"
+	resp, err := http.Get(url)
+	if err != nil {
+		panic(err.Error())
+	}
+	defer resp.Body.Close()
 
-		var crypto Crypto
-		if err := json.NewDecoder(resp.Body).Decode(&crypto); err != nil {
-			return
-		}
-		fmt.Printf("The price of %v today is %v usd \n", crypto[0].Name, crypto[0].PriceUsd)
+	var crypto Crypto
+	if err := json.NewDecoder(resp.Body).Decode(&crypto); err != nil {
+		return
+	}
+	fmt.Printf("The price of %v today is %v usd \n", crypto[0].Name, crypto[0].PriceUsd)
+	fmt.Printf("The Symbol of  %v is %v  \n", crypto[0].Name, crypto[0].Symbol)
 }
 
 func Info3() {
@@ -79,6 +101,7 @@ func Info3() {
 		return
 	}
 	fmt.Printf("The price of %v today is %v usd \n", crypto[0].Name, crypto[0].PriceUsd)
+	fmt.Printf("The Symbol of  %v is %v  \n", crypto[0].Name, crypto[0].Symbol)
 }
 
 func Info4() {
@@ -94,6 +117,7 @@ func Info4() {
 		return
 	}
 	fmt.Printf("The price of %v today is %v usd \n", crypto[0].Name, crypto[0].PriceUsd)
+	fmt.Printf("The Symbol of  %v is %v  \n", crypto[0].Name, crypto[0].Symbol)
 }
 
 func Info5() {
@@ -109,4 +133,5 @@ func Info5() {
 		return
 	}
 	fmt.Printf("The price of %v today is %v usd \n", crypto[0].Name, crypto[0].PriceUsd)
+	fmt.Printf("The Symbol of  %v is %v  \n", crypto[0].Name, crypto[0].Symbol)
 }
