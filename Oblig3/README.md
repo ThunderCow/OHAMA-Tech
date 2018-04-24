@@ -31,7 +31,7 @@ Læringsutbytte:
 
 Oppgave 1
 kommentar...
-i oppgave sk
+i oppgave setter opp en webserver som lytter til port 8080
 
 Oppgave 2
 kommentar...
