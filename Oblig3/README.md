@@ -31,6 +31,7 @@ Læringsutbytte:
 
 Oppgave 1
 kommentar...
+i oppgave sk
 
 Oppgave 2
 kommentar...
