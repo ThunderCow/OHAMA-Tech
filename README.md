@@ -1,6 +1,7 @@
 # OHAMA-Tech
 IS-105
 
+Oblig2
 <table style="width:100%">
   <tr>
     <th><b>Group members:</b></th>
@@ -20,3 +21,5 @@ IS-105
   <tr>
     <td>Adrian Bjørk</td>
 </table>
+=======
+Testing jetsbrain with git :)
