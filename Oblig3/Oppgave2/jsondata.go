@@ -70,6 +70,7 @@ func Info1() {
 	case "price":*/
 	fmt.Printf("The price of %v today is %v usd \n", crypto[0].Name, crypto[0].PriceUsd)
 	fmt.Printf("The Symbol of  %v is %v  \n", crypto[0].Name, crypto[0].Symbol)
+	fmt.Printf("The Total supply of  %v is %v  \n", crypto[0].Name, crypto[0].TotalSupply)
 }
 
 func Info2() {
@@ -86,6 +87,7 @@ func Info2() {
 	}
 	fmt.Printf("The price of %v today is %v usd \n", crypto[0].Name, crypto[0].PriceUsd)
 	fmt.Printf("The Symbol of  %v is %v  \n", crypto[0].Name, crypto[0].Symbol)
+	fmt.Printf("The Total supply of  %v is %v  \n", crypto[0].Name, crypto[0].TotalSupply)
 }
 
 func Info3() {
@@ -102,6 +104,7 @@ func Info3() {
 	}
 	fmt.Printf("The price of %v today is %v usd \n", crypto[0].Name, crypto[0].PriceUsd)
 	fmt.Printf("The Symbol of  %v is %v  \n", crypto[0].Name, crypto[0].Symbol)
+	fmt.Printf("The Total supply of  %v is %v  \n", crypto[0].Name, crypto[0].TotalSupply)
 }
 
 func Info4() {
@@ -118,6 +121,7 @@ func Info4() {
 	}
 	fmt.Printf("The price of %v today is %v usd \n", crypto[0].Name, crypto[0].PriceUsd)
 	fmt.Printf("The Symbol of  %v is %v  \n", crypto[0].Name, crypto[0].Symbol)
+	fmt.Printf("The Total supply of  %v is %v  \n", crypto[0].Name, crypto[0].TotalSupply)
 }
 
 func Info5() {
@@ -134,4 +138,21 @@ func Info5() {
 	}
 	fmt.Printf("The price of %v today is %v usd \n", crypto[0].Name, crypto[0].PriceUsd)
 	fmt.Printf("The Symbol of  %v is %v  \n", crypto[0].Name, crypto[0].Symbol)
+	fmt.Printf("The Total supply of  %v is %v  \n", crypto[0].Name, crypto[0].TotalSupply)
 }
+
+
+/*
+func template1(w http.ResponseWriter, r *http.Request) {
+	fp := path.Join("index.html")
+	tmpl, err := template.ParseFiles(fp)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	//call Data instance here which is declared globally.
+	if err := tmpl.Execute(w, catch); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+}
+*/
