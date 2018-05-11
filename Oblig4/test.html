@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>OHAMA Tech</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Style the side navigation */
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+        }
+
+
+        /* Side navigation links */
+        .sidenav a {
+            color: white;
+            padding: 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color on hover */
+        .sidenav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Style the content */
+        .content {
+            margin-left: 200px;
+            padding-left: 20px;
+        }
+        #ctable {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 700px;
+        }
+
+        #ctable td, #ctable th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            width: 50%;
+        }
+
+        #ctable tr:nth-child(even){background-color: #f2f2f2;}
+
+        #ctable tr:hover {background-color: #ddd;}
+
+        #ctable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #3B3B3B;
+            color: white;
+        }
+        .div2 {
+            width: 300px;
+            height: 100px;
+            border: 1px solid blue;
+            box-sizing: border-box;
+            margin-left: 220px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidenav">
+    <a href="http://localhost:8080/">  Home</a>
+    <a href="http://localhost:8080/8">  Bitcoin</a>
+    <a href="http://localhost:8080/9">  Litecoin</a>
+    <a href="http://localhost:8080/10">  Ripple</a>
+    <a href="http://localhost:8080/11">  Ethereum</a>
+    <a href="http://localhost:8080/12">  Monero</a>
+</div>
+
+<div class="content">
+    <h2>OHAMA Tech - Oblig 4 testing lab by M. Ali and Ole :3</h2>
+    <p>This website is under development for a school project using languages golang and html.</p><br>
+
+    <!-- Creating table to set in different values. -->
+    <table id=ctable width="550">
+        <tr>
+            <th>Header</th>
+            <th>Header</th>
+        </tr>
+        <!--<tr>
+            <td>ID</td>
+            <td>{{.ID}}</td>
+        </tr>-->
+        <tr>
+            <td>Name</td>
+            <td>{{.Name}}</td>
+        </tr>
+        <tr>
+            <td>Symbol</td>
+            <td>{{.Symbol}}</td>
+        </tr>
+        <tr>
+            <td>Rank</td>
+            <td>{{.Rank}}</td>
+        </tr>
+        <tr>
+            <td>Price in US dollar</td>
+            <td>{{.PriceUsd}}</td>
+        </tr>
+        <tr>
+            <td>Price in Bitcoin</td>
+            <td>{{.PriceBtc}}</td>
+        </tr>
+        <tr>
+            <td>Volume the last 24 hours in US dollar</td>
+            <td>{{.Two4HVolumeUsd}}</td>
+        </tr>
+        <tr>
+            <td>Market cap in US dollar</td>
+            <td>{{.MarketCapUsd}}</td>
+        </tr>
+        <!-- <tr>
+            <td>Available Supply</td>
+            <td>{{.AvailableSupply}}</td>
+        </tr>-->
+        <tr>
+            <td>Total Supply</td>
+            <td>{{.TotalSupply}}</td>
+        </tr>
+        <tr>
+            <td>Max Supply</td>
+            <td>{{.MaxSupply}}</td>
+        </tr>
+        <tr>
+            <td>Change in percent the last hour</td>
+            <td>{{.PercentChange1H}}</td>
+        </tr>
+        <tr>
+            <td>Change in percent the last 24 hours</td>
+            <td>{{.PercentChange24H}}</td>
+        </tr>
+        <tr>
+            <td>Change in percent the last 7 days</td>
+            <td>{{.PercentChange7D}}</td>
+        </tr>
+        <!--<tr>
+            <td>Data last updated</td>
+            <td>{{.LastUpdated}}</td>
+        </tr>-->
+    </table>
+    <!-- adding suggestions / predictions and differentiating through switch cases and if-else. -->
+    <h2>Prediction</h2>
+    <script>
+        var price = {{.PriceUsd}};
+        var percent = {{.PercentChange24H}};
+        var text;
+        var text2 = "*Note!! The prediction is based on price & percentage changed in last 24 hours.*";
+        var name = {{.Name}};
+
+        //implementing switch cases to differentiate between currencies.
+        switch (name) {
+            case "Bitcoin":
+                if
+                (price >= 7177 && percent >= 3.0)
+                {
+                    document.write(text = "Price market of <b>{{.Name}}</b> is raising and tendency <b>{{.PercentChange24H}}%</b> is also good, market has better pace to sale or buy.", '<br/>');
+                }
+                else if (price > 7077 && percent < 3.0) {
+                    document.write(text = "Caution!! Though Price market is good <b>{{.PriceUsd}}$</b> but tendency in the market is not good <b>{{.PercentChange24H}}%</b>, so just keep an eye on market tendency before sale or buy.", '<br/>');
+                } else {
+                    document.write(text = "*Sorry!! We are unable to give you a good prediction because Price <b>{{.PriceUsd}}$</b> & tendency <b>{{.PercentChange24H}}%</b> in market are not ideal.*", '<br/>');
+                }
+                break;
+            case "Litecoin":
+                if
+                (price >= 145 && percent >= 3.0)
+                {
+                    document.write(text = "Price market of <b>{{.Name}}</b> is raising and tendency <b>{{.PercentChange24H}}%</b> is also good, market has better pace to sale or buy.", '<br/>');
+                }
+                else if (price > 145 && percent < 3.0) {
+                    document.write(text = "Caution!! Though Price market is good <b>{{.PriceUsd}}$</b> but tendency in the market is not good <b>{{.PercentChange24H}}%</b>, so just keep an eye on market tendency before sale or buy.", '<br/>');
+                } else {
+                    document.write(text = "*Sorry!! We are unable to give you a good prediction because Price <b>{{.PriceUsd}}$</b> & tendency <b>{{.PercentChange24H}}%</b> in market are not ideal.*", '<br/>');
+                }
+                break;
+            case "Ripple":
+                if
+                (price >= 0.82 && percent >= 4.0)
+                {
+                    document.write(text = "Price market of <b>{{.Name}}</b> is raising and tendency <b>{{.PercentChange24H}}%</b> is also good, market has better pace to sale or buy.", '<br/>');
+                }
+                else if (price > 0.82 && percent < 4.0) {
+                    document.write(text = "Caution!! Though Price market is good <b>{{.PriceUsd}}$</b> but tendency in the market is not good <b>{{.PercentChange24H}}%</b>, so just keep an eye on market tendency before sale or buy.", '<br/>');
+                } else {
+                    document.write(text = "*Sorry!! We are unable to give you a good prediction because Price <b>{{.PriceUsd}}$</b> & tendency <b>{{.PercentChange24H}}%</b> in market are not ideal.*", '<br/>');
+                }
+                break;
+            case "Ethereum":
+                if
+                (price >= 650 && percent >= 3.0)
+                {
+                    document.write(text = "Price market of <b>{{.Name}}</b> is raising and tendency <b>{{.PercentChange24H}}%</b> is also good, market has better pace to sale or buy.", '<br/>');
+                }
+                else if (price > 650 && percent < 3.0) {
+                    document.write(text = "Caution!! Though Price market is good <b>{{.PriceUsd}}$</b> but tendency in the market is not good <b>{{.PercentChange24H}}%</b>, so just keep an eye on market tendency before sale or buy.", '<br/>');
+                } else {
+                    document.write(text = "*Sorry!! We are unable to give you a good prediction because Price <b>{{.PriceUsd}}$</b> & tendency <b>{{.PercentChange24H}}%</b> in market are not ideal.*", '<br/>');
+                }
+                break;
+            case "Monero":
+                if
+                (price >= 240 && percent >= 4.0)
+                {
+                    document.write(text = "Price market of <b>{{.Name}}</b> is raising and tendency <b>{{.PercentChange24H}}%</b> is also good, market has better pace to sale or buy.", '<br/>');
+                }
+                else if (price > 240 && percent < 4.0) {
+                    document.write(text = "Caution!! Though Price market is good <b>{{.PriceUsd}}$</b> but tendency in the market is not good <b>{{.PercentChange24H}}%</b>, so just keep an eye on market tendency before sale or buy.", '<br/>');
+                } else {
+                    document.write(text = "*Sorry!! We are unable to give you a good prediction because Price <b>{{.PriceUsd}}$</b> & tendency <b>{{.PercentChange24H}}%</b> in market are not ideal.*", '<br/>');
+                }
+                break;
+        }
+        //Printing out  default statement on the page
+        document.write(text2)
+    </script>
+</div>
+</body>
+</html>
